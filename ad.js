@@ -18,7 +18,7 @@ const Tv_cv = () => {
         var output = Tv_a + Tv_k * ((Tv_b - Tv_a) / 2 ** Tv_n);
     } else if (Tv_w == "Min") {
         var output = Tv_a + (Tv_k - 1) * ((Tv_b - Tv_a) / 2 ** Tv_n);
-    } else if (Tv_w == "Mid") {
+    } else if (Tv_w == "Med") {
         var output = Tv_a + (Tv_k - 0.5) * ((Tv_b - Tv_a) / 2 ** Tv_n);
     } else {
         var output = "Error";
@@ -35,7 +35,7 @@ const Qe1_cv = () => {
 
     if (Qe1_w == "Max" || Qe1_w == "Min") {
         var output = (Qe1_b - Qe1_a) / 2 ** Qe1_n;
-    } else if (Qe1_w == "Mid") {
+    } else if (Qe1_w == "Med") {
         var output = ((Qe1_b - Qe1_a) / 2 ** Qe1_n) / 2
     } else {
         var output = "Error";
@@ -57,7 +57,7 @@ const Qe2_cv = () => {
     }
     if (Qe2_w == "Max" || Qe2_w == "Min") {
         output = Qe2_a + tmp;
-    } else if (Qe2_w == "Mid") {
+    } else if (Qe2_w == "Med") {
         output = Qe2_a + (Qe2_k - 0.5) * ((Qe2_b - Qe2_a) / 2 ** Qe2_n);
     } else {
         output = "Error";
