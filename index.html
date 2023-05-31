@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AD変換</title>
+</head>
+<body>
+    <!--javascriptでAD変換処理をする-->
+    <h1>AD変換</h1>
+    <h2>量⼦化間隔</h2>
+    <p>区間[a, b]の間をnビットでA/D変換した量子化間隔を答えよ</p>
+    <form action="" method="post">
+        <p>a：<input type="text" id="Qi_a" size="10"></p>
+        <p>b：<input type="text" id="Qi_b" size="10"></p>
+        <p>n：<input type="text" id="Qi_n" size="10"></p>
+        <p><button type="button" onclick="Qi_cv()" id="">変換</button></p>
+    </form>
+    <p id="Qi_output"></p>
+
+    <h2>代表値</h2>
+    <p>区間[a, b]の間をnビットでA/D変換した、～～値の代表値とするとき第k量子区間の代表値を答えよ</p>
+    <form action="" method="post">
+        <p>a：<input type="text" id="Tv_a" size="10"></p>
+        <p>b：<input type="text" id="Tv_b" size="10"></p>
+        <p>n：<input type="text" id="Tv_n" size="10"></p>
+        <label for="Tv_w">～～を選択してください</label>
+        <select id="Tv_w">
+            <option value="Max" selected>最大</option>
+            <option value="Min">最小</option>
+            <option value="Med">中央</option>
+        </select>
+        <p><button type="button" onclick="Tv_cv()" id="">変換</button></p>
+    </form>
+    <p id="Tv_output"></p>
+
+    <h2>量子化誤差</h2>
+
+    <p>
+        区間[a, b]の間をnビットでA/D変換した、～～値を代表値とするとき、<br>
+        量子化誤差の最大値を答えよ。
+    </p>
+    <form action="" method="post">
+        <p>a：<input type="text" id="Qe1_a" size="10"></p>
+        <p>b：<input type="text" id="Qe1_b" size="10"></p>
+        <p>n：<input type="text" id="Qe1_n" size="10"></p>
+        <label for="Qe1_w">～～を選択してください</label>
+        <select id="Qe1_w">
+            <option value="Max" selected>最大</option>
+            <option value="Min">最小</option>
+            <option value="Med">中央</option>
+        </select>
+        <p><button type="button" onclick="Qe1_cv()" id="">変換</button></p>
+    </form>
+    <p id="Qe1_output"></p>
+
+    <p>
+        区間[a, b]の間をnビットでA/D変換した、～～値を代表値とするとき、<br>
+        量子化誤差の最大値を答えよ。
+    </p>
+    <form action="" method="post">
+        <p>a：<input type="text" id="Qe2_a" size="10"></p>
+        <p>b：<input type="text" id="Qe2_b" size="10"></p>
+        <p>n：<input type="text" id="Qe2_n" size="10"></p>
+        <label for="Qe2_w">～～を選択してください</label>
+        <select id="Qe2_w">
+            <option value="Max" selected>最大</option>
+            <option value="Min">最小</option>
+            <option value="Med">中央</option>
+        </select>
+        <p><button type="button" onclick="Qe2_cv()" id="">変換</button></p>
+    </form>
+    <p id="Qe2_output"></p>
+
+
+    <script src="ad.js"></script>
+</body>
+</html>
