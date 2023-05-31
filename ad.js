@@ -15,11 +15,12 @@ const Tv_cv = () => {
     var Tv_w = document.getElementById("Tv_w").value;
     console.log(Tv_w);
     if (Tv_w == "Max") {
-        var output = Tv_a + Tv_k * ((Tv_b - Tv_a) / 2 ** Tv_n);
+        // 数値型にならん こいつ↓
+        var output = Number(Tv_a) + Tv_k * ((Tv_b - Tv_a) / 2 ** Tv_n);
     } else if (Tv_w == "Min") {
-        var output = Tv_a + (Tv_k - 1) * ((Tv_b - Tv_a) / 2 ** Tv_n);
+        var output = Number(Tv_a) + (Tv_k - 1) * ((Tv_b - Tv_a) / 2 ** Tv_n);
     } else if (Tv_w == "Med") {
-        var output = Tv_a + (Tv_k - 0.5) * ((Tv_b - Tv_a) / 2 ** Tv_n);
+        var output = Number(Tv_a) + (Tv_k - 0.5) * ((Tv_b - Tv_a) / 2 ** Tv_n);
     } else {
         var output = "Error";
     }
@@ -51,14 +52,17 @@ const Qe2_cv = () => {
     var Qe2_n = document.getElementById("Qe2_n").value;
     var Qe2_k = document.getElementById("Qe2_k").value;
     var Qe2_w = document.getElementById("Qe2_w").value;
-    var dis = (Qe1_b - Qe1_a) / 2 ** Qe1_n;
+    var dis = (Qe2_b - Qe2_a) / 2 ** Qe2_n;
     while (tmp < Qe2_k) {
         tmp += dis;
     }
-    if (Qe2_w == "Max" || Qe2_w == "Min") {
-        output = Qe2_a + tmp;
+    console.log("%f" + "-" + "%f" + "=" + "%f", tmp, Qe2_k, tmp - Qe2_k);
+    if (Qe2_w == "Max") {
+        output = tmp - Qe2_k;
+    } else if (Qe2_w == "Min") {
+        output = dis - (tmp - Qe2_k);
     } else if (Qe2_w == "Med") {
-        output = Qe2_a + (Qe2_k - 0.5) * ((Qe2_b - Qe2_a) / 2 ** Qe2_n);
+        output = Math.abs(Qe2_k - (tmp + (tmp - dis)) / 2);
     } else {
         output = "Error";
     }
