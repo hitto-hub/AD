@@ -1,2 +1,2 @@
 # test用
-hitto.me/ad
+[url](https://hitto-hub.github.io/AD)
